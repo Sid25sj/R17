@@ -45,3 +45,12 @@ npm install nodemon
 
 nodemon server.js
 
+
+Two Types of UI have been created to show Role wise User list.
+1 : /TableShow - Normal Table
+2: /SearchTable - MDBDataTable which provides functionality like search, pagination , sorting etc.
+
+Both uses Axios to fetch data from an API.
+
+
+
