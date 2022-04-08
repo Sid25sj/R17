@@ -7,6 +7,7 @@ const Form = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
+    role :""
   });
 
   const updateFormData = (event) =>
@@ -15,13 +16,14 @@ const Form = () => {
       [event.target.name]: event.target.value,
     });
 
-  const { fullName, email } = formData;
+  const { fullName, email,role } = formData;
   const navigate = useNavigate();
   let handleForm = (e) => {
+    console.log("the data : "+JSON.stringify(formData));
     navigate("/TableShow");
     //alert(fullName+' A form was submitted: ' + formData);
 
-    fetch("http://localhost:3001/store", {
+    fetch("http://localhost:3002/store", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -57,6 +59,13 @@ const Form = () => {
         name="email"
         required
       />
+      <select name="role" value={role}  onChange={(e) => updateFormData(e)} required >
+      <option value="">Select Role</option>
+        <option value="Administrator">Administrator</option>
+        <option value = "Subscriber">Subscriber</option>
+        <option value="Author">Author</option>
+        <option value ="Editor">Editor</option>
+      </select>
       <button type="submit">Submit</button>
       {/* <button type="submit">submit</button> */}
       {/* <Link onClick={routerChange} to='/TableShow'>TableShow</Link> */}

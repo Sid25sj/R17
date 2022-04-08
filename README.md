@@ -34,7 +34,8 @@ npm init -y
 CREATE TABLE `r17` (
   `id` int(11) PRIMARY KEY AUTO_INCREMENT,
   `fullname` varchar(200) DEFAULT NULL,
-  `email` varchar(200) DEFAULT NULL
+  `email` varchar(200) DEFAULT NULL,
+  `role` varchar(200) DEFAULT NULL,
 ) ENGINE=InnoDB
 
 

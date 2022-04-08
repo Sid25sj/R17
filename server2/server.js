@@ -30,7 +30,7 @@ conn.connect(function (err) {
 
 //add new user
 app.post("/store", (req, res) => {
-  let data = { fullname: req.body.fullName, email: req.body.email };
+  let data = { fullname: req.body.fullName, email: req.body.email,role: req.body.role };
   let sql = "INSERT INTO r17 SET ?";
   let query = conn.query(sql, data, (err, results) => {
     if (err) throw err;
@@ -40,11 +40,12 @@ app.post("/store", (req, res) => {
 
 //show users
 app.get("/show", (req, res) => {
-  const q = "select * from r17";
+  const q = "select * from r17 order by role";
   conn.query(q, (error, result) => {
     if (error) {
       throw error;
     }
+
     res.send(result);
     // console.log(result);
   });

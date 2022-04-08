@@ -9,7 +9,7 @@ const TableShow = () => {
 
   // using axios to get Data
   const getData = () => {
-     axios.get("http://localhost:3001/show")
+     axios.get("http://localhost:3002/show")
           .then((res)=> {
             console.log(res);
             setData(res.data);
@@ -27,6 +27,7 @@ useEffect(() => {
           <tr>
           <th>Full name</th>
           <th>Email</th>
+          <th>Role</th>
           </tr>
         </thead>
         <tbody>
@@ -37,6 +38,7 @@ useEffect(() => {
                 <tr key={key}>
                   <td>{e.fullname}</td>
                   <td>{e.email}</td>
+                  <td>{e.role}</td>
                 </tr>
               );
             })
