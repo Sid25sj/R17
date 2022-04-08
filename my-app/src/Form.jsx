@@ -40,7 +40,10 @@ const Form = () => {
 
   return (
     <>
-    <Link className="header" to='/TableShow'>Show Data</Link>
+    <Link className="header" to='/TableShow'>Show Normal Table</Link>
+    <Link className="header" to='/SearchTable'>Show Searchable Table</Link>
+
+    
     <form onSubmit={handleForm}>
       <input
         value={fullName}
